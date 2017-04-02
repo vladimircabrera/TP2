@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <math.h>
-#include "defines.h"
-#include "prototipos.h"
+# include <stdio.h>
+# include <math.h>
+# include "defines.h"
+# include "prototipos.h"
 
 
 
