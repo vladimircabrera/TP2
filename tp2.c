@@ -25,7 +25,7 @@ int main (void)
 	float temp_i, temp_f, rango_muestra, rango_muestra_y, temp_iy, temp_fy;
 	float aux_a, aux_b, aux_c;
 	long int n_muestras;
-	int user_choice, i;
+	int user_choice, i, prec_dec;
 
 printf("%s\n", MSJ_BIENVENIDA);
 
@@ -52,6 +52,8 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &temp_f);
                 printf("%s\n", MSJ_NUM_MUESTRAS);
                 scanf("%li", &n_muestras);
+                printf("%s\n", MSJ_PREC_DEC);
+                scanf("%i", &prec_dec);
                 rango_muestra= (temp_f-temp_i)/n_muestras;
                 printf("%s\n", MSJ_AMPLITUD);
                 scanf("%f", &aux_a);
@@ -59,11 +61,11 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &aux_b);
                 printf("%s\n", MSJ_ANG_INIC);
                 scanf("%f", &aux_c);
-                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR;
+                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
 
                 for(i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
                 {
-                	printf("\t%.2f\t%.2f\n", temp_i, senoidal(aux_a, aux_b, temp_i, aux_c));
+                	printf("\t%.*f\t%.*f\n", prec_dec,temp_i, prec_dec, senoidal(aux_a, aux_b, temp_i, aux_c));
                 }
                 
             	st = MENU_ENTRADA;
@@ -77,12 +79,14 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &temp_f);
                 printf("%s\n", MSJ_NUM_MUESTRAS);
                 scanf("%li", &n_muestras);
+                printf("%s\n", MSJ_PREC_DEC);
+                scanf("%i", &prec_dec);
                 rango_muestra= (temp_f-temp_i)/n_muestras;   
-                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR;
+                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
 
                  for(i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
                 {
-                	printf("\t%.2f\t%.2f\n", temp_i, logaritmica(temp_i));
+                	printf("\t%.*f\t%.*f\n", prec_dec, temp_i, prec_dec, logaritmica(temp_i));
                 }
                 
             	st = MENU_ENTRADA;
@@ -96,12 +100,14 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &temp_f);
                 printf("%s\n", MSJ_NUM_MUESTRAS);
                 scanf("%li", &n_muestras);
+                printf("%s\n", MSJ_PREC_DEC);
+                scanf("%i", &prec_dec);
                 rango_muestra= (temp_f-temp_i)/n_muestras;   
-                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR;
+                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
 
                  for(i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
                 {
-                	printf("\t%.2f\t%.2f\n", temp_i, loglineal(temp_i));
+                	printf("\t%.*f\t%.*f\n",prec_dec, temp_i, prec_dec, loglineal(temp_i));
                 }
                 
             	st = MENU_ENTRADA;
@@ -115,12 +121,14 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &temp_f);
                 printf("%s\n", MSJ_NUM_MUESTRAS);
                 scanf("%li", &n_muestras);
+                printf("%s\n", MSJ_PREC_DEC);
+                scanf("%i", &prec_dec);
                 rango_muestra= (temp_f-temp_i)/n_muestras;   
-                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR;
+                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
 
                  for(i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
                 {
-                	printf("\t%.2f\t%.2f\n", temp_i, exponencial(temp_i));
+                	printf("\t%.*f\t%.*f\n", prec_dec, temp_i, prec_dec, exponencial(temp_i));
                 }
                 
             	st = MENU_ENTRADA;
@@ -134,12 +142,14 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &temp_f);
                 printf("%s\n", MSJ_NUM_MUESTRAS);
                 scanf("%li", &n_muestras);
+                printf("%s\n", MSJ_PREC_DEC);
+                scanf("%i", &prec_dec);
                 rango_muestra= (temp_f-temp_i)/n_muestras;   
-                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR;
+                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
 
                  for(i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
                 {
-                	printf("\t%.2f\t%.2f\n", temp_i, escalon(temp_i));
+                	printf("\t%.*f\t%.*f\n", prec_dec, temp_i, prec_dec, escalon(temp_i));
                 }
                 
             	st = MENU_ENTRADA;
@@ -153,6 +163,8 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &temp_f);
                 printf("%s\n", MSJ_NUM_MUESTRAS);
                 scanf("%li", &n_muestras);
+                printf("%s\n", MSJ_PREC_DEC);
+                scanf("%i", &prec_dec);
                 rango_muestra= (temp_f-temp_i)/n_muestras;
                 printf("%s\n", MSJ_POS_INICIAL);
                 scanf("%f", &aux_a);
@@ -160,11 +172,11 @@ printf("%s\n", MSJ_BIENVENIDA);
                 scanf("%f", &aux_b);
                 printf("%s\n", MSJ_ACELERACION);
                 scanf("%f", &aux_c);
-                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR;
+                printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
 
                 for(i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
                 {
-                	printf("\t%.2f\t%.2f\n", temp_i, mrua(aux_a, aux_b, aux_c, temp_i));
+                	printf("\t%.*f\t%.*f\n", prec_dec, temp_i, prec_dec, mrua(aux_a, aux_b, aux_c, temp_i));
                 }
                 
             	st = MENU_ENTRADA;
@@ -187,6 +199,9 @@ printf("%s\n", MSJ_BIENVENIDA);
                 rango_muestra= (temp_f-temp_i)/n_muestras;
                 rango_muestra_y= (temp_fy-temp_iy)/n_muestras;
 
+                printf("%s\n", MSJ_PREC_DEC);
+                scanf("%i", &prec_dec);
+
                 printf("%s\n", MSJ_VAR_A);
                 scanf("%f", &aux_a);
                 printf("%s\n", MSJ_VAR_B);
@@ -195,7 +210,7 @@ printf("%s\n", MSJ_BIENVENIDA);
 
                 for(i=1; i<= n_muestras; temp_i+= rango_muestra, temp_iy+= rango_muestra_y, i++)
                 {
-                	printf("\t%.2f\t%.2f\t%.2f\n", temp_i, temp_iy, paraboloide(aux_a, aux_b, temp_i, temp_iy));
+                	printf("\t%.*f\t%.*f\t%.*f\n", prec_dec, temp_i,prec_dec, temp_iy, prec_dec, paraboloide(aux_a, aux_b, temp_i, temp_iy));
                 }
                 
             	st = MENU_ENTRADA;
