@@ -1,76 +1,76 @@
 # include <stdio.h>
 # include <math.h>
+
 # include "defines.h"
 # include "prototipos.h"
 
+typedef enum {	MENU_ENTRADA = SELEC_ENTRADA,
+				SENOIDAL = SELEC_SIN,
+				LOGARITMICA = SELEC_LOG,
+				LOG_LINEAL = SELEC_LINEAL,
+				EXPONENCIAL = SELEC_EXP,
+				HEAVISIDE = SELEC_HEAV,
+				MRUA = SELEC_HEAV,
+				PARAB_HIP = SELEC_PARAB,
+				SALIDA = SELEC_SALIR} menu_t;
 
 
-typedef enum {	MENU_ENTRADA,
-				SENOIDAL,
-				LOGARITMICA,
-				LOG_LINEAL,
-				EXPONENCIAL,
-				HEAVISIDE,
-				MRUA,
-				PARAB_HIP,
-				SALIDA} status_t;
-
-
-status_t selec_menu (int);
+menu_t selec_menu (int);
 
 
 int main (void)
 {
-	status_t st= MENU_ENTRADA;
+	menu_t st= MENU_ENTRADA;
 	float temp_i, temp_f, rango_muestra, resultado;
 	float aux_a, aux_b, aux_c;
 	long int n_muestras;
 	int user_choice, i;
 
-printf("%s\n", MSJ_BIENVENIDA);
+	puts(MSJ_BIENVENIDA);
 
-    while(st != SALIDA)
-    {
+    	while(st != SALIDA)
+    	{
 
-        switch(st)
-        {
-            case MENU_ENTRADA:
+        	switch(st)
+        	{
+            	case MENU_ENTRADA:
 
-				printf("%s\n", MSJ_SELECCION_ESTADO);
-				printf("\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n", SELEC_SIN, "SENOIDAL", SELEC_LOG, "LOGARITMICA", SELEC_LINEAL, "LOG LINEAL", SELEC_EXP, "EXPONENCIAL", SELEC_HEAV, "HEAVISIDE", SELEC_MRUA, "MRUA", SELEC_PARAB,"PARAB_HIP", SELEC_SALIR, "SALIDA");
-				scanf("%i", &user_choice);
+					printf("%s\n", MSJ_SELECCION_ESTADO);
+					printf("\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%i. %s\n\t%c. %s\n", SELEC_SIN, "SENOIDAL", SELEC_LOG, "LOGARITMICA", SELEC_LINEAL, "LOG LINEAL", SELEC_EXP, "EXPONENCIAL", SELEC_HEAV, "HEAVISIDE", SELEC_MRUA, "MRUA", SELEC_PARAB,"PARAB_HIP", SELEC_SALIR, "SALIDA");
+					scanf("%i", &user_choice);
 				
-				st= selec_menu(user_choice);
+					st= selec_menu(user_choice);
                 
-            break;
+            		break;
 
-            case SENOIDAL:
+            	case SENOIDAL:
 
-                printf("%s\n", MSJ_TIEMP_INIC);
-                scanf("%f", &temp_i);
-                printf("%s\n", MSJ_TIEMP_FINAL);
-                scanf("%f", &temp_f);
-                printf("%s\n", MSJ_NUM_MUESTRAS);
-                scanf("%li", &n_muestras);
-                rango_muestra= (temp_f-temp_i)/n_muestras;
-                printf("%s\n", MSJ_AMPLITUD);
-                scanf("%f", &aux_a);
-                printf("%s\n", MSJ_FRECUENCIA);
-                scanf("%f", &aux_b);
-                printf("%s\n", MSJ_ANG_INIC);
-                scanf("%f", &aux_c);
-                printf("\t%s\t%s\n", "x", "f(x)");
+                	printf("%s\n", MSJ_TIEMP_INIC);
+                	scanf("%f", &temp_i);
+                	printf("%s\n", MSJ_TIEMP_FINAL);
+                	scanf("%f", &temp_f);
+                	printf("%s\n", MSJ_NUM_MUESTRAS);
+                	scanf("%li", &n_muestras);
+                	rango_muestra= (temp_f-temp_i)/n_muestras;
+                	printf("%s\n", MSJ_AMPLITUD);
+                	scanf("%f", &aux_a);
+                	printf("%s\n", MSJ_FRECUENCIA);
+                	scanf("%f", &aux_b);
+                	printf("%s\n", MSJ_ANG_INIC);
+                	scanf("%f", &aux_c);
+                	printf("\t%s\t%s\n", "x", "f(x)");
 
-                for(temp_i, i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
-                {
-                	printf("\t%.2f\t%.2f\n", temp_i, senoidal(aux_a, aux_b, temp_i, aux_c));
-                }
+                	for(temp_i, i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
+                	{
+                		printf("\t%.2f\t%.2f\n", temp_i, senoidal(aux_a, aux_b, temp_i, aux_c));
+                	}
                 
-            	st = MENU_ENTRADA;
-            break;
-        }
-    }
-return 1;
+            		st = MENU_ENTRADA;
+            		
+            		break;        	
+        	}
+    	}
+	return 1;
 }
 
 
@@ -81,9 +81,9 @@ double senoidal(int amplitud, int frecuencia, float t, int angulo_inicial){
 	return resultado;
 }
 
-status_t selec_menu (int a)
+menu_t selec_menu (int a)
 {
-	status_t st;
+	menu_t st;
 	switch(a)
                     {
                         case SELEC_SIN:
