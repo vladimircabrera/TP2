@@ -5,5 +5,4 @@ double loglineal (float);
 double exponencial (float);
 double escalon (float);
 double mrua (float, float, float, float);
-double paraboloide (int, int, float);
-
+double paraboloide (int, int, float, float);
