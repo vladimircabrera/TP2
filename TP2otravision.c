@@ -53,8 +53,48 @@ float senoidal(int amplitud, int frecuencia, float t, int angulo_inicial){
 	return resultado;
 }
 
+/*do{
+					puts("INGRESE LOS VALORES DEL TIEMPO INICIAL, TIEMPO FINAL Y CANTIDAD DE MUESTRAS EN ESE ORDEN:");
+					if(scanf("%f%f%i", &temp_i, &temp_f, &n_muestras) != 3){
+						fprintf(stderr, "%s\n", ERR_INGRESO);
+						while((c = getchar()) != '\n' && c != EOF);
+						
+					}
+					if(n_muestras == 0){
+						fprintf(stderr, "%s\n", ERR_INGRESO);
+						printf("%s\n", "El numero de muestras no puede ser 0");
+					}
+				}while(temp_i > temp_f || n_muestras == 0);
 
+				while ((c = getchar()) != '\n' && c != EOF);
 
+				printf("%s %d\n%s %d\n%s %d\n", "El valor guardado en temp_i es", temp_i, "El valor guardado en temp_f es", temp_f, "El valor guardado en n_muestras es", n_muestras);
+
+                rango_muestra = (temp_f-temp_i)/n_muestras;
+*/
+/*
+i = 0;
+							while(i < MAX_V_AUX){
+								if(scanf("%f",&v_aux[i]) != 1){
+									puts("ERR_INGRESO");
+									i = 0;
+								}
+							i++;
+
+							}
+
+							printf("%s\n", MSJ_PRECISION_DEC);
+                			scanf("%i", &prec_dec);
+							printf("%s\n", MSJ_AMPLITUD);
+                			scanf("%f", &aux_a);
+                			printf("%s\n", MSJ_FRECUENCIA);
+                			scanf("%f", &aux_b);
+                			printf("%s\n", MSJ_ANG_INIC);
+                			scanf("%f", &aux_c);
+                			printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
+
+                			while ((c = getchar()) != '\n' && c != EOF);
+*/
 int main (void)
 {
 
