@@ -11,6 +11,7 @@
 # define MSJ_AMPLITUD "INGRESE UN VALOR PARA LA AMPLITUD:"
 # define MSJ_FRECUENCIA "INGRESE UN VALOR PARA LA FRECUENCIA:"
 # define MSJ_ANG_INIC "INGRESE UN VALOR PARA EL ANGULO INICIAL:"
+# define MSJ_PRECISION_DEC "INGRESE LA CANTRIDAD DE DECIMALES DE PRECISION DESEADA:"
 
 /* VALORES DEL MENU */
 # define SELEC_M_PRINC 'a'
@@ -25,6 +26,10 @@
 # define SELEC_SALIR 'q'
 
 # define PI 3.14
+# define NOMBRE_VAR_1 	"x"
+# define NOMBRE_VAR_2 	"y"
+# define FUNC_1_VAR   	"f(x)"
+# define FUNC_2_VAR		"f(x,y)"
 
 /* MENSAJES DE ERROR */
 # define ERR_INGRESO "LA OPCION INGRESADA NO ES CORRECTA."
@@ -40,6 +45,16 @@ typedef enum {	MENU_PRINCIPAL = SELEC_M_PRINC,
 				PARAB_HIP = SELEC_PARAB,
 				SALIDA = SELEC_SALIR } menu_t;
 
+
+float senoidal(int amplitud, int frecuencia, float t, int angulo_inicial){
+	/*y(t) = A · sin(2π · f · t + φ)*/
+	float resultado;
+	resultado = amplitud*sin(2*PI*frecuencia*t+angulo_inicial);
+	return resultado;
+}
+
+
+
 int main (void)
 {
 
@@ -49,7 +64,7 @@ int main (void)
 
 	float aux_a, aux_b, aux_c;
 	long int n_muestras;
-	int user_choice, i, c;
+	int user_choice, prec_dec, i, c;
 
 	puts(MSJ_BIENVENIDA);
 
@@ -94,6 +109,8 @@ int main (void)
 
 						case SENOIDAL:
 
+							printf("%s\n", MSJ_PRECISION_DEC);
+                			scanf("%i", &prec_dec);
 							printf("%s\n", MSJ_AMPLITUD);
                 			scanf("%f", &aux_a);
                 			printf("%s\n", MSJ_FRECUENCIA);
@@ -101,6 +118,8 @@ int main (void)
                 			printf("%s\n", MSJ_ANG_INIC);
                 			scanf("%f", &aux_c);
                 			printf("\t%s\t%s\n", NOMBRE_VAR_1, FUNC_1_VAR);
+
+                			while ((c = getchar()) != '\n' && c != EOF);
 
                 			for(i=1; i<= n_muestras; temp_i+= rango_muestra, i++)
                 			{
