@@ -53,6 +53,30 @@ float senoidal(int amplitud, int frecuencia, float t, int angulo_inicial){
 	return resultado;
 }
 
+/*
+	for(i = 0; i < MAX_INGRESOS ; i ++){
+					puts("INGRESE EL VALOR DEL TIEMPO INICIAL");
+					if(scanf("%f",&temp_i) != 1 || temp_i < 0){
+						puts("El valor ingresado es incorrecto");
+						while ((c = getchar()) != '\n' && c != EOF);
+					}else{
+						puts("INGRESE EL VALOR DEL TIEMPO FINAL");
+						if(scanf("%f",&temp_f) != 1 || temp_f < temp_i){
+							puts("El valor ingresado es incorrecto");
+							while ((c = getchar()) != '\n' && c != EOF);							
+						}else{
+							puts("INGRESE EL NUMERO DE MUESTRAS");
+							if(scanf("%i",&n_muestras) != 1 || n_muestras <= 0){
+								puts("El valor ingresado es incorrecto");
+								while ((c = getchar()) != '\n' && c != EOF);
+							}else{
+								i = MAX_INGRESOS;
+							}
+						}						
+					}
+				}
+*/
+
 /*do{
 					puts("INGRESE LOS VALORES DEL TIEMPO INICIAL, TIEMPO FINAL Y CANTIDAD DE MUESTRAS EN ESE ORDEN:");
 					if(scanf("%f%f%i", &temp_i, &temp_f, &n_muestras) != 3){
